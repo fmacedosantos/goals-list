@@ -12,7 +12,10 @@ const App = () => {
   ]);
 
 const addNewGoalHandler = newGoal => {
-  setCourseGoals(courseGoals.concat(newGoal));
+  //setCourseGoals(courseGoals.concat(newGoal)); ideal para qnd não dependemos do estado anterior
+  setCourseGoals(prevCourseGoal => prevCourseGoal.concat(newGoal)) 
+  // evita um estado incorreto (ordem dos elementos)
+  
 }
 
   return <div className='course-goals'>
