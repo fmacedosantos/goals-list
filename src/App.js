@@ -12,9 +12,14 @@ const courseGoals = [
   {id: 'cg3', text: 'Help other students in the course Q&A'},
 ]
 
+const addNewGoalHandler = newGoal => {
+  courseGoals.push(newGoal);
+  console.log(newGoal);
+}
+
   return <div className='course-goals'>
     <h2>Course goals</h2>
-    <NewGoal/>
+    <NewGoal onAddGoal={addNewGoalHandler}/>
     <GoalList goals={courseGoals} />
   </div>
 }
