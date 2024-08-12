@@ -13,6 +13,8 @@ const NewGoal = props => {
             text: enteredText
         };
 
+        enteredText = '';
+
         props.onAddGoal(newGoal);
     }
 
@@ -21,7 +23,7 @@ const NewGoal = props => {
     }
 
     return <form className='new-goal' onSubmit={addGoalHandler}>
-        <input type='text' onChange={textChangeHandler}/>
+        <input type='text' value={enteredText} onChange={textChangeHandler}/>
         <button type='submit'>Add Goal</button>
     </form>
 };
